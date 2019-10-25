@@ -15,7 +15,7 @@ python faceDetectionEigen.py threshold K
 ```
 ```
 default -
-K=20, threshold=40000
+K=20, threshold=30000
 
 ```
 
