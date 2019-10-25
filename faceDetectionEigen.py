@@ -5,13 +5,6 @@ from numpy import linalg
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import normalize
 
-#path to train and test images
-PATH_TRAIN = "train/"
-PATH_TEST = "test/"
-
-#model hyperparameters
-K = 20
-THRESHOLD = 30000
 
 class UTILS:
     """utility class for helper methods"""
@@ -90,16 +83,3 @@ class FaceRecognonisation(UTILS):
         return lables
 
 
-
-
-if __name__ =="__main__":
-
-    print ("traning start!")
-    rec = FaceRecognonisation()
-    faces = rec.fit(PATH_TRAIN, K)
-    # print (faces.shape)#KxM
-    print ("training done!")
-    print("starting test-->")
-    y_hat = rec.test(PATH_TEST, K, THRESHOLD)
-    acc = accuracy_score(np.arange(40), y_hat)
-    print ("the accuracy:", acc)
